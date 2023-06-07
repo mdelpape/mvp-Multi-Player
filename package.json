@@ -1,0 +1,46 @@
+{
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "file-loader": "^6.2.0",
+    "mongoose": "^7.2.2",
+    "morgan": "^1.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.4",
+    "@babel/preset-react": "^7.22.3",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.42.0",
+    "gh-pages": "^5.0.0",
+    "nodemon": "^2.0.22",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.85.1",
+    "webpack-cli": "^5.1.3"
+  },
+  "scripts": {
+    "dev": "npx webpack --watch --mode development & npx nodemon --watch ./server ./server/index.js",
+    "build": "npx webpack --mode production",
+    "start": "node ./server/index.js"
+  },
+  "name": "rfp2303-mvp-multi-player-experience",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdelpape/rfp2303-mvp-Multi-Player-Experience.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdelpape/rfp2303-mvp-Multi-Player-Experience/issues"
+  },
+  "homepage": "https://github.com/mdelpape/rfp2303-mvp-Multi-Player-Experience#readme",
+  "description": ""
+}
