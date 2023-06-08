@@ -23,7 +23,7 @@ export default function Start() {
   const [keyPresses, setKeyPresses] = useState({});
   const [messages, setMessages] = useState({});
   const [msgsArray, setMsgsArray] = useState([]);
-  // console.log(myChar)
+  // console.log(players)
 
   // console.log(msgsArray)
 
@@ -59,7 +59,7 @@ export default function Start() {
       });
     });
 
-  },[])
+  }, [])
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -218,7 +218,7 @@ export default function Start() {
           <label htmlFor="username" className="label">Username:</label>
           <input id='username' className="input"></input>
           <div className="dropdown">
-            <select id='myClass'className="select">
+            <select id='myClass' className="select">
               <option value="wizard">Select an option</option>
               <option value="wizard">Wizard</option>
               <option value="knight">Knight</option>
@@ -242,13 +242,27 @@ export default function Start() {
       {players.map((player) => {
         return <Players usr={player} message={messages[player.id] || ''} key={player.id} />
       })}
+      <div className='online'>
+        <div>
+          <u>Players Online: <b>{players.length}</b></u>
+        </div>
+        {players.map((player) => (
+          <div key={player.id}>
+            <b>{player.user}</b>
+          </div>
+        ))}
+      </div>
       <div className='publicChat'>
-        {msgsArray.map((message) => <p style={{ margin: '1px 1px' }}>{message.usrName}:: {message.message}</p>)}
+        {msgsArray.map((message) => (
+          <p style={{ margin: '1px 1px' }}>
+            <span style={{ fontWeight: 'bold' }}>{message.usrName}:</span> {message.message}
+          </p>
+        ))}
       </div>
       <div className='footer'>
         <form onSubmit={chatHandler} className='chat font'>
-          <input type='text' placeholder='Chat' id='chatInput' className = 'chatInput' ></input>
-          <button className = 'chatButton'>Enter</button>
+          <input type='text' placeholder='Chat' id='chatInput' className='chatInput' ></input>
+          <button className='chatButton'>Enter</button>
         </form>
       </div>
     </div>
