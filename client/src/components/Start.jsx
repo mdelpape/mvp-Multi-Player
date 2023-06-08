@@ -8,7 +8,8 @@ import statue1 from '../Assets/statue1.png';
 import statue2 from '../Assets/statue2.png';
 import statue3 from '../Assets/statue3.png';
 import statue4 from '../Assets/statue4.png';
-import pyramid from '../Assets/pyramid.png'
+import pyramid from '../Assets/pyramid.png';
+import airplane from '../Assets/airplane.png'
 // import Apple from './Apples.jsx';
 
 import { io } from 'socket.io-client';
@@ -262,19 +263,22 @@ export default function Start() {
         </form>
       </Modal>
       <img src={blimp} style={{ position: 'absolute', left: '1500px', top: '1500px', width: '500px', zIndex: 1 }} />
-      <img className='shadow' src={shadow} style={{ position: 'relative', left: '1570px', top: '1600px', width: '250px' }} />
+      <img className='shadow' src={shadow} style={{ position: 'relative', left: '1400px', top: '1600px', width: '275px', opacity: '.5' }} />
       <img src={fire} style={{ position: 'absolute', left: '1500px', top: '2500px', height: '300px' }} />
       <img src={statue4} style={{ position: 'absolute', left: '300px', top: '300px', height: '300px' }} />
       <img src={statue2} style={{ position: 'absolute', left: '2600px', top: '300px', height: '300px' }} />
       <img src={statue3} style={{ position: 'absolute', left: '300px', top: '2500px', height: '300px' }} />
       <img src={statue1} style={{ position: 'absolute', left: '2600px', top: '2500px', height: '300px' }} />
       <img src={pyramid} style={{ position: 'absolute', left: '1200px', top: '400px', height: '500px' }} />
-
+      <div className='airplane'>
+        <img src={airplane} style={{ position: 'absolute', zIndex: 1 }} />
+        <img className='shadow' src={shadow} style={{ position: 'absolute', top: '150px', opacity: '.5', width: '200px', left: '-50px' }} />
+      </div>
       {players.map((player) => {
         return <Players usr={player} message={messages[player.id] || ''} key={player.id} />
       })}
       {/* <div style = {{top:`${appleCords.y}px`, left:`${appleCords.x}px`, position:'absolute'}}>Apple</div> */}
-      <b style = {{position:'absolute', left:'100px', top:'20px',}}>W-A-S-D TO MOVE</b>
+      <b style={{ position: 'absolute', left: '100px', top: '20px', }}>W-A-S-D TO MOVE</b>
       <div className='online'>
         <div>
           <u>Players Online: <b>{players.length}</b></u>
