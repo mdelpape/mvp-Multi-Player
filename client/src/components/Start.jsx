@@ -4,10 +4,12 @@ import Players from './Players.jsx';
 import fire from '../Assets/fire.png';
 import blimp from '../Assets/blimp.png';
 import shadow from '../Assets/shadow.png';
-import statue1 from '../Assets/statue1.png'
-import statue2 from '../Assets/statue2.png'
-import statue3 from '../Assets/statue3.png'
-import statue4 from '../Assets/statue4.png'
+import statue1 from '../Assets/statue1.png';
+import statue2 from '../Assets/statue2.png';
+import statue3 from '../Assets/statue3.png';
+import statue4 from '../Assets/statue4.png';
+import pyramid from '../Assets/pyramid.png'
+// import Apple from './Apples.jsx';
 
 import { io } from 'socket.io-client';
 
@@ -23,9 +25,30 @@ export default function Start() {
   const [keyPresses, setKeyPresses] = useState({});
   const [messages, setMessages] = useState({});
   const [msgsArray, setMsgsArray] = useState([]);
-  // console.log(players)
+  // const [appleCords, setAppleCords] = useState({x:0, y:0})
+  // const [appleFound, setAppleFound] = useState(false)
 
-  // console.log(msgsArray)
+  // if (myChar) {
+  //   let newX = myChar.position.x;
+  //   let newY = myChar.position.y;
+  //   let aX = appleCords.x;
+  //   let aY = appleCords.y
+  //   // console.log(newX)
+  //   // console.log('new', newX,'apple',  aX)
+  //   // console.log('new', newY,'apple',  aY)
+  //   if (newX > (aX-50) && newX < (aX+50) && newY > (aY-50) && newX < (aY)) {
+  //     setAppleFound(!appleFound);
+  //   }
+
+  // }
+
+  // useEffect(() => {
+  //   console.log('apple cords set')
+  //   var x = Math.floor(Math.random() * 3000);
+  //   var y = Math.floor(Math.random() * 3000);
+  //   setAppleCords({x:x, y:y})
+  //   console.log(x, y)
+  // },[appleFound])
 
   useEffect(() => {
     if (myChar) {
@@ -106,12 +129,19 @@ export default function Start() {
       if (!myChar) {
         return;
       }
+
       const viewWidth = window.innerWidth;
       const viewHeight = window.innerHeight;
       const root = document.getElementById('root');
       const MOVEMENT_SPEED = 20;
       let newX = myChar.position.x;
       let newY = myChar.position.y;
+      // console.log(newX)
+      // console.log('new', newX,'apple',  aX)
+      // console.log('new', newY,'apple',  aY)
+      // if (newX > (aX-50) && newX < (aX+50) && newY > (aY-50) && newX < (aY)) {
+      //   setAppleFound(!appleFound);
+      // }
 
       if (keyPresses.w) {
         if (newY > 0) {
@@ -233,15 +263,18 @@ export default function Start() {
       </Modal>
       <img src={blimp} style={{ position: 'absolute', left: '1500px', top: '1500px', width: '500px', zIndex: 1 }} />
       <img className='shadow' src={shadow} style={{ position: 'relative', left: '1570px', top: '1600px', width: '250px' }} />
-      <img src={fire} style={{ position: 'absolute', left: '1500px', top: '400px', height: '300px' }} />
+      <img src={fire} style={{ position: 'absolute', left: '1500px', top: '2500px', height: '300px' }} />
       <img src={statue4} style={{ position: 'absolute', left: '300px', top: '300px', height: '300px' }} />
       <img src={statue2} style={{ position: 'absolute', left: '2600px', top: '300px', height: '300px' }} />
       <img src={statue3} style={{ position: 'absolute', left: '300px', top: '2500px', height: '300px' }} />
       <img src={statue1} style={{ position: 'absolute', left: '2600px', top: '2500px', height: '300px' }} />
+      <img src={pyramid} style={{ position: 'absolute', left: '1200px', top: '400px', height: '500px' }} />
 
       {players.map((player) => {
         return <Players usr={player} message={messages[player.id] || ''} key={player.id} />
       })}
+      {/* <div style = {{top:`${appleCords.y}px`, left:`${appleCords.x}px`, position:'absolute'}}>Apple</div> */}
+      <b style = {{position:'absolute', left:'100px', top:'20px',}}>W-A-S-D TO MOVE</b>
       <div className='online'>
         <div>
           <u>Players Online: <b>{players.length}</b></u>
