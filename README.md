@@ -11,6 +11,8 @@ This is for people who want to be social and experience an online persona.
 
 This app allows users to move around the map in real time while viewing other gamers current location.
 
+![Uploading ezgif.com-video-to-gif.gif…]()
+
 **Problem**
 
 This is for entertainment purposes.
