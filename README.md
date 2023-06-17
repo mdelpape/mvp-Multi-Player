@@ -11,7 +11,8 @@ This is for people who want to be social and experience an online persona.
 
 This app allows users to move around the map in real time while viewing other gamers current location.
 
-![Uploading ezgif.com-video-to-gif.gif…]()
+![ezgif com-video-to-gif](https://github.com/mdelpape/mvp-Multi-Player/assets/111204640/02c44c2b-78d2-4b11-9393-ae599a57943c)
+
 
 **Problem**
 
